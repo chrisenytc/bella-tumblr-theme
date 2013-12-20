@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+<!--
+===========================================================================
+Bella Theme 1.0.0
+https://github.com/chrisenytc/bella-tumblr-theme
+
+Website: http://chris.enytc.com
+Support: chrisenytc@gmail.com
+===========================================================================
+-->
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <!-- BOOLEAN OPTIONS -->
+    <meta name="if:Use Google Web Fonts" content="1"/>
+    <meta name="if:Show Portrait" content="1"/>
+    <meta name="if:Fixed Sidebar" content="1"/>
+    <meta name="if:Fixed Background" content="0"/>
+    <meta name="if:Show Menu" content="0"/>
+    <meta name="if:Infinite Scrolling" content="0"/>
+    <meta name="if:Show Sharing Features" content="1"/>
+    <meta name="if:Share Facebook" content="1"/>
+    <meta name="if:Share Twitter" content="1"/>
+    <meta name="if:Share Google Plus" content="1"/>
+    <meta name="if:Enable Navigation" content="0"/>
+    <meta name="if:Enable Playlist" content="0"/>
+
+    <!-- IMAGES -->
+    <meta name="image:Background" content="http://static.tumblr.com/lsvwgu3/9M4my3ivo/livia_bg.png"/>
+    <meta name="image:Favicon" content="http://static.tumblr.com/lsvwgu3/EyJmy3it0/1386861910_crown.png"/>
+
+    <!-- COLOR OPTIONS -->
+    <meta name="color:Body" content="#666"/>
+    <meta name="color:Background" content="#eee"/>
+    <meta name="color:Link" content="#666"/>
+    <meta name="color:Type Text" content="#00b1c1"/>
+    <meta name="color:Type Quote" content="#f6c313"/>
+    <meta name="color:Type Photo" content="#ee145b"/>
+    <meta name="color:Type Link" content="#63c76a"/>
+    <meta name="color:Type Chat" content="#b935b6"/>
+    <meta name="color:Type Video" content="#f68e56"/>
+    <meta name="color:Type Audio" content="#6d4ae0"/>
+
+    <!-- SOCIAL MEDIA -->
+    <meta name="text:Twitter Username" content=""/>
+    <meta name="text:Facebook Username" content=""/>
+    <meta name="text:GitHub Username" content=""/>
+    <meta name="text:Disqus Shortname" content=""/>
+    <meta name="text:Google Analytics ID" content=""/>
+
+        <title>{Title}{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
+        <meta name="description" content="{MetaDescription}">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="alternate" type="application/rss+xml" href="{RSS}" >
+
+    {block:IfUseGoogleWebfonts}
+    <link href='http://fonts.googleapis.com/css?family=
+      Nunito:400,300|
+      Karla:400,400italic,700,700italic&subset=latin,latin-ext'
+      rel='stylesheet' type='text/css'>
+    {/block:IfUseGoogleWebfonts}
+
+    {block:IfFaviconImage}
+    <link rel="icon" href="{image:Favicon}" />
+    {/block:IfFaviconImage}
+    {block:IfNotFaviconImage}
+    <link rel="icon" href="{Favicon}" />
+    {/block:IfNotFaviconImage}
+
+    <style type="text/css">
+      /** reset - meyerweb **/
+
+      html, body, div, span, applet, object, iframe,
+      h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+      a, abbr, acronym, address, big, cite, code,
+      del, dfn, em, img, ins, kbd, q, s, samp,
+      small, strike, strong, sub, sup, tt, var,
+      b, u, i, center,
+      dl, dt, dd, ol, ul, li,
+      fieldset, form, label, legend,
+      table, caption, tbody, tfoot, thead, tr, th, td,
+      article, aside, canvas, details, embed,
+      figure, figcaption, footer, header, hgroup,
+      menu, nav, output, ruby, section, summary,
+      time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+      }
+
+      article, aside, details, figcaption, figure,
+      footer, header, hgroup, menu, nav, section {
+        display: block;
+      }
+
+      body {
+        line-height: 1;
+      }
+
+      ol, ul {
+        list-style: none;
+      }
+
+      blockquote, q {
+        quotes: none;
+      }
+
+      blockquote:before, blockquote:after,
+      q:before, q:after {
+        content: '';
+        content: none;
+      }
+
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+
+      /** grid - simpler framework **/
+
+      .container {
+        width: 940px;
+        margin: 0 auto;
+      }
+
+      .grid1, .grid2, .grid3, .grid4, .grid5, .grid6, .grid7, .grid8, .grid9, .grid10, .grid11 {
+        float: left;
+        display: inline;
+        margin: 0 0 20px 20px;
+      }
+
+      .grid1 {
+        width: 60px;
+      }
+
+      .grid2 {
+        width: 140px;
+      }
+
+      .grid3 {
+        width: 220px;
+      }
+
+      .grid4 {
+        width: 300px;
+      }
+
+      .grid5 {
+        width: 380px;
+      }
+
+      .grid6 {
+        width: 460px;
+      }
+
+      .grid7 {
+        width: 540px;
+      }
+
+      .grid8 {
+        width: 620px;
+      }
+
+      .grid9 {
+        width: 700px;
+      }
+
+      .grid10 {
+        width: 780px;
+      }
+
+      .grid11 {
+        width: 860px;
+      }
+
+      .first {
+        margin-left: 0;
+        clear: left;
+      }
+
+      /* clearfix */
+
+      .clearfix:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0;
+      }
+
+      * html .clearfix {
+        zoom: 1;
+      }
+
+      *:first-child+html .clearfix {
+        zoom: 1;
+      }
+
+      /** main **/
+
+      body {
+        {block:IfUseGoogleWebfonts}font: 14px/20px 'Karla', sans-serif;{/block:IfUseGoogleWebfonts}
+        {block:IfNotUseGoogleWebfonts}font: 12px/18px Helvetica, Arial, sans-serif;{/block:IfNotUseGoogleWebfonts}
+        margin: 20px auto 0;
+        padding:0;
+        {block:ifBackgroundImage}background: url({image:Background}) repeat {block:ifFixedBackground}fixed{/block:ifFixedBackground}{/block:ifBackgroundImage};
+        {block:IfNotBackgroundImage}background:{color:Background};{/block:IfNotBackgroundImage}
+        color:{color:Body}
+      }
+
+      a, a:hover {
+        text-decoration: none;
+        border: none;
+        color:{color:Link}
+      }
+
+      .container {
+        width: 960px;
+        margin: 0 auto;
+      }
+
+      .header {
+        width: 960px;
+        margin: 0 auto;
+        text-align: left
+      }
+
+      .padding {
+        padding: 20px 40px
+      }
+
+      .hidden {
+        display:none
+      }
+
+      .fixed {
+        position: fixed
+      }
+
+      .left {
+        float: left;
+      }
+
+      .right {
+        float: right;
+      }
+
+      .loading {
+        margin: 0
+      }
+
+      .loading h2 {
+        margin-bottom: 0
+      }
+
+      .overlay {
+        opacity: 0.5;
+        -webkit-transition: 1s;
+        -moz-transition: 1s;
+        transition: 1s;
+      }
+
+      ::-webkit-scrollbar-thumb:vertical {
+        border-radius:20px;
+        -moz-border-radius:20px;
+        background-color: #666;
+        height:100px;
+      }
+
+      ::-webkit-scrollbar-thumb:horizontal {
+        border-radius:20px;
+        -moz-border-radius:20px;
+        background-color: #666;
+        height:10px !important;
+      }
+
+      ::-webkit-scrollbar {
+        height:10px;
+        width:10px;
+        background-color: #ccc;
+      }
+
+      /** sidebar **/
+
+      .description {
+        margin: 10px 0;
+        padding: 0;
+        line-height: 16px
+      }
+
+      .social-media {
+        color: #999;
+        font-size: 90%;
+        margin:10px auto;
+        display: table;
+      }
+
+      .social-media a{
+        color: #999;
+      }
+
+      .social-media li{
+        float:left;
+        padding:0;
+        margin:0 3px 0 0
+      }
+
+      .social-media li:after {
+        content:'·';
+        margin:0 0 0 3px;
+        float:right
+      }
+
+      .social-media li:last-child:after {
+        color:transparent;
+      }
+
+      .social-media li:last-child:after {
+        margin:0
+      }
+
+      .avatar {
+        border-radius: 64px;
+        -moz-border-radius: 64px;
+        -webkit-border-radius: 64px;
+        margin: 0 0 10px 0;
+      }
+
+      .info {
+        text-align: center;
+      }
+
+      /* navigation */
+
+      .navigation {
+        margin:0
+      }
+
+      .navigation ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .navigation ul li {
+        float: left;
+        width: 31px;
+        height: 31px;
+        border: 0;
+        -webkit-transition: 0.1s;
+        -moz-transition: 0.1s;
+        transition: 0.1s;
+        position:relative
+      }
+
+      .navigation ul li a {
+        width:31px;
+        height:31px;
+        position:absolute;
+        top:0;
+        left:0;
+        display:inline
+      }
+
+      .navigation ul li.active,
+      .navigation ul li:hover {
+        padding-bottom: 10px
+      }
+
+      .navigation ul li:before {
+        width: 10px;
+        height: 10px;
+        margin: 10px 10px;
+        float: left;
+        content: '';
+          background: url("http://static.tumblr.com/gakc6wq/ruFmbbrzg/icons_2x.gif") no-repeat;
+                background-size:10px 120px;
+      }
+
+      .navigation ul li.text {
+        background: {color:Type Text}
+      }
+
+      .navigation ul li.text:before {
+        background-position: 0 0
+      }
+
+      .navigation ul li.quote {
+        background: {color:Type Quote}
+      }
+
+      .navigation ul li.quote:before {
+        background-position: 0 -10px
+      }
+
+      .navigation ul li.photo {
+        background: {color:Type Photo}
+      }
+
+      .navigation ul li.photo:before {
+        background-position: 0 -20px
+      }
+
+      .navigation ul li.link {
+        background: {color:Type Link}
+      }
+
+      .navigation ul li.link:before {
+        background-position: 0 -30px
+      }
+
+      .navigation ul li.chat {
+        background: {color:Type Chat}
+      }
+
+      .navigation ul li.chat:before {
+        background-position: 0 -40px
+      }
+
+      .navigation ul li.video {
+        background: {color:Type Video}
+      }
+
+      .navigation ul li.video:before {
+        background-position: 0 -50px
+      }
+
+      .navigation ul li.audio {
+        background: {color:Type Audio}
+      }
+
+      .navigation ul li.audio:before {
+        background-position: 0 -60px
+      }
+
+      ul.nav-menu {
+        font-size:12px;
+        display: table;
+        margin:0 auto
+        }
+
+      ul.nav-menu li {
+        float:left;
+        margin:0 1px 0 0;
+        padding:2px 8px;
+        background:#fff
+        }
+
+      ul.nav-menu li:hover {
+        background:#eee
+        }
+
+      .nav-header ul {
+        float:left;
+        padding:0;
+        text-transform:uppercase;
+        width:100%;
+        background:#fff;
+        }
+
+      .nav-header ul li {
+        background:#fff;
+        float:left;
+        margin:0;
+        padding:10px 40px;
+        font-size:14px;
+        border-right:1px solid {color:Background};
+        }
+
+            .nav-header ul li:last-child {
+                border-right:0 !important
+                }
+
+
+      /** posts **/
+
+      .box {
+        text-align: left;
+        background: #fff;
+        border-top: 1px solid {color:Background}
+      }
+
+      .box p {
+        margin: 10px 0
+      }
+
+      .box a {
+        text-decoration: none;
+      }
+
+      .box a:hover {
+        text-decoration: none;
+      }
+
+      .box ul {
+        margin-left: 30px;
+        list-style: none
+      }
+
+      .box ul li:before {
+        content:'';
+        float:left;
+        width:7px;
+        height:7px;
+        background: url(http://static.tumblr.com/gakc6wq/eJ3mbdh8e/bullet.gif) no-repeat;
+        margin:6px 6px 0 0
+      }
+
+      /* text */
+
+      article.text:hover {
+        border-top: 1px solid {color:Type Text}
+      }
+
+      article.text blockquote {
+        margin-left: 30px
+      }
+
+      /* quote */
+
+      article.quote:hover {
+        border-top: 1px solid {color:Type Quote}
+      }
+
+      article.quote p:first-child {
+        background: url(http://static.tumblr.com/gakc6wq/WPJmb7npg/quote.png) no-repeat top left;
+        font: 160% light Georgia;
+        padding: 0 0 0 40px
+      }
+
+      article.quote p.owner {
+        text-align: left;
+        background: none;
+        {block:IfUseGoogleWebfonts}font: 14px 'Karla', sans-serif{/block:IfUseGoogleWebfonts}
+        {block:IfNotUseGoogleWebfonts}font: 12px Arial, sans-serif{/block:IfNotUseGoogleWebfonts}
+      }
+
+      /* photo */
+
+      article.photo:hover {
+        border-top: 1px solid {color:Type Photo}
+      }
+
+      article.photo img {
+        width: 100%;
+        height: auto
+      }
+
+      .photoset .photoset_row .photoset_photo {
+        margin-left:1px !important
+      }
+
+      /* link */
+
+      article.link:hover {
+        border-top: 1px solid {color:Type Link}
+      }
+
+      /* chat */
+
+      article.chat:hover {
+        border-top: 1px solid {color:Type Chat}
+      }
+
+      article.chat ul.conv {
+        list-style: none;
+        margin: 5px 0 20px 0;
+        float:left;
+        padding: 0
+      }
+
+      article.chat ul.conv li {
+        margin: 0;
+        padding: 5px 0;
+        float:left;
+        width:100%;
+        border-bottom: 1px solid #f4f4f4
+      }
+
+      article.chat ul.conv li:before {
+        display:none
+      }
+
+      article.chat ul.conv li:hover{
+        background:#f8f8f8
+      }
+
+      article.chat ul.conv li:last-child {
+        border: 0
+      }
+
+      article.chat ul.conv li span.label {
+        width: 100px;
+        float: left
+      }
+
+      article.chat ul.conv li p {
+        float:left;
+        margin:0;
+      }
+
+      /* video */
+
+      article.video:hover {
+        border-top: 1px solid {color:Type Video}
+      }
+
+      /* audio */
+
+      article.audio:hover {
+        border-top: 1px solid {color:Type Audio}
+      }
+
+      article.audio .audio_cover {
+        float:left;
+        margin:30px 0 30px 40px;
+      }
+
+      article.audio .audio_info{
+        float:left;
+        margin:10px 0 30px 40px
+      }
+
+      article.audio .wthcover {
+        margin:30px 0 0 20px
+      }
+
+      article.audio .audio_info span{
+        display:block;
+        margin:0 0 15px
+      }
+
+      article.audio .audio_text{
+        float:left;
+        width:100%;
+        display:block
+      }
+
+      article.audio .audio_text .padding{
+        padding-top:0;
+        margin-top:-20px
+      }
+
+      article.audio img {
+        width: 128px;
+        height: 128px;
+      }
+
+      article.audio h2 {
+        margin:15px 0 0
+      }
+
+      article.audio .grid2 {
+        margin-bottom:10px
+      }
+
+      article .audio_player {
+        overflow: hidden;
+        margin: 2px
+      }
+
+      article .player {
+        height: 31px;
+        overflow:hidden;
+        display: block;
+        border: 1px solid #eee;
+      }
+
+      /* answer */
+
+      article.answer:hover {
+        border-top: 1px solid {color:Type Chat}
+      }
+
+      article.answer p.question {
+        background: url(http://static.tumblr.com/gakc6wq/KTpmb8mig/questionmark.png) no-repeat top left;
+        padding: 0 0 0 30px;
+        font-size:16px;
+        line-height:22px
+      }
+
+      article.answer div.reply p {
+        background: none;
+        padding:0
+      }
+
+      article .tags {
+        margin:0 0 20px 0;
+        float: left;
+        list-style: none;
+        display:block;
+        padding: 0
+      }
+
+      article .tags li {
+        float: left;
+        margin: 0 15px 0 0;
+      }
+
+      article .tags li:before {
+        display:none
+      }
+
+      article .tags a {
+        color: #ccc;
+        border: 0
+      }
+
+      article .tags a:hover {
+        border-bottom:1px dotted #ccc
+      }
+
+      /* post info */
+
+      article .post-info {
+        float: left;
+        width: 100%;
+        border-top: 1px dashed #f4f4f4;
+        background: #fff
+      }
+
+      article .post-info ul {
+        margin: 0;
+        padding: 15px 30px;
+        float: left
+      }
+
+      article .post-info ul li {
+        list-style: none;
+        float: left;
+        margin: 0 10px 0 0;
+        padding: 0 10px;
+        color: #ccc;
+        border: 1px solid #fff;
+        border-radius: 25px;
+        -moz-border-radius: 25px;
+        -webkit-border-radius: 25px;
+        -webkit-transition: .2s ease-in-out;
+        -moz-transition: .2s ease-in-out;
+        transition: .2s ease-in-out;
+        position:relative
+      }
+
+      article .post-info ul li:before {
+        background: url("http://static.tumblr.com/gakc6wq/ruFmbbrzg/icons_2x.gif") no-repeat;
+                background-size:10px 120px;
+        float: left;
+        content: '';
+        width: 10px;
+        height: 10px;
+        margin: 4px 6px 0 0;
+      }
+
+      article .post-info ul li:hover {
+        background:#fff;
+        border: 1px solid #eee;
+      }
+
+      article .post-info ul li a{
+        color:#ccc;
+        border:0
+      }
+
+      article .post-info ul li a:hover{
+        border:0
+      }
+
+      article .post-info ul li.date:before {
+        background-position: 0 -70px
+      }
+
+      article .post-info ul li.notes:before {
+        background-position: 0 -80px
+      }
+
+      article .post-info ul li.share:before {
+        background-position: 0 -90px
+      }
+
+      article .post-info ul li.share ul.share_cont {
+        display:none;
+        background:#fff;
+        position:absolute;
+        top:-1px;
+        padding:0 10px;
+        left:80px;
+        border-left:1px solid #eee;
+      }
+
+      article .post-info ul li.share ul.share_cont li {
+        float:left;
+        margin:0 0 2px 0;
+        padding:0 0 0 10px;
+        width:94px;
+        background:#eee;
+        line-height:20px;
+        height:20px
+      }
+
+      article .post-info ul li.share ul.share_cont li:last-child {
+        margin:0 0 5px
+      }
+
+      article .post-info ul li.share ul.share_cont li:hover {
+        border:1px solid #fff
+      }
+
+      article .post-info ul li.share ul.share_cont li:before {
+        display:none
+      }
+
+      article .post-info ul li.permalink:before {
+        background-position: 0 -100px
+      }
+
+      article .post-info ul li.comments:before {
+        background-position: 0 -110px
+      }
+
+      .text #disqus_thread a{
+        color: {color:Type Text}
+      }
+
+      .quote #disqus_thread a{
+        color: {color:Type Quote}
+      }
+
+      .photo #disqus_thread a{
+        color: {color:Type Photo}
+      }
+
+      .link #disqus_thread a{
+        color: {color:Type Link}
+      }
+
+      .chat #disqus_thread a{
+        color: {color:Type Chat}
+      }
+
+      .video #disqus_thread a{
+        color: {color:Type Video}
+      }
+
+      .audio #disqus_thread a{
+        color: {color:Type Audio}
+      }
+
+      .answer #disqus_thread a{
+        color: {color:Type Chat}
+      }
+
+      /** single **/
+
+      /* notes */
+
+      .notes ol li {
+        border-bottom:1px solid #eee;
+        line-height:16px;
+        padding:8px 0;
+        position:relative
+        }
+
+      .notes ol li:hover {
+        background:#f8f8f8
+        }
+
+      .notes ol li:last-child {
+        border:none
+        }
+
+      .notes ol li a{
+        border:none
+        }
+
+      .notes ol li a:hover{
+        border:none;
+        }
+
+      .notes ol li .avatar{
+        float:left;
+        margin-right:5px;
+        border-radius:8px;
+        -moz-border-radius:8px;
+        -webkit-border-radius:8px
+        }
+
+      .notes ol li:hover:after {
+        background: url(http://static.tumblr.com/gakc6wq/Nbnmb7nnv/icons.gif) no-repeat;
+        content:'';
+        float:right;
+        width:10px;
+        height:10px;
+        right:6px;
+        top:10px;
+        position:absolute
+      }
+
+      .notes ol li.like:hover:after {
+        background-position: 0 -80px
+      }
+
+      .notes ol li.reblog:hover:after {
+        background-position: 0 -90px
+      }
+
+      .notes ol li.reply:hover:after {
+        background-position: 0 -110px
+      }
+
+      /* post nav */
+
+      .pagination li{
+        width:50%;
+        float:left;
+        padding:15px 0;
+      }
+
+      .pagination li:hover{
+        background:#fff
+      }
+
+      .pagination li a{
+        padding:0 40px;
+        color:#999
+      }
+
+      .pagination li.next{
+        text-align:right;
+        float:right
+      }
+
+      .pagination li.prev{
+        text-align: left
+      }
+
+      /* headings */
+
+      h1 {
+        {block:IfUseGoogleWebfonts}font: 400 32px/26px 'Nunito', sans-serif;{/block:IfUseGoogleWebfonts}
+        {block:IfNotUseGoogleWebfonts}font:bold 32px/26px Helvetica, Arial, sans-serif;{/block:IfNotUseGoogleWebfonts}
+        display: block;
+        margin: 10px 0 0;
+        color: #666;
+        width:100%;
+        padding: 0;
+        text-align: center;
+      }
+
+      h2 {
+        font-size: 18px;
+        {block:IfUseGoogleWebfonts}font-weight: 700;{/block:IfUseGoogleWebfonts}
+        display: inline-block
+      }
+
+      article h2 {
+        margin:10px 0 5px;
+        display:block;
+        width:100%
+      }
+
+      h3 {
+        font-size:22px;
+        display: block;
+        margin:0 0 15px 0;
+        color: #666;
+        width:100%;
+        padding: 0;
+        text-align: left;
+      }
+
+      /* Back Top */
+
+      #back-top {
+        position: fixed;
+        bottom: 20px;
+        margin: 0;
+      }
+
+      #back-top a {
+        width: 31px;
+        display: block;
+        background: #ddd;
+        -webkit-transition: 1s;
+        -moz-transition: 1s;
+        transition: 1s;
+      }
+
+      #back-top a:hover {
+        color: #000;
+      }
+
+      #back-top span {
+        width: 31px;
+        height: 31px;
+        display: block;
+        margin-bottom: 7px;
+        background: url(http://static.tumblr.com/gakc6wq/nLPmb7nr0/arrow-top.gif) no-repeat center center;
+      }
+
+      #back-top a:hover span {
+        background-color: #777;
+      }
+
+      /** Mobile */
+        @media only screen and (max-width: 768px) {
+
+        .container {
+          width:94%
+        }
+
+        .grid1, .grid2, .grid3, .grid4, .grid5, .grid6, .grid7, .grid8, .grid9, .grid10, .grid11 {
+          float: left;
+          display: block;
+          width:100%;
+          margin: 0 0 10px 0;
+        }
+
+        .info {
+          position:relative !important
+        }
+
+        .padding {
+          padding:10px 20px
+        }
+
+        .nav-header ul li {
+          padding:10px 0;
+          text-align:center;
+          width:49%
+        }
+
+        article .post-info ul {
+          padding:10px 10px
+        }
+
+        article .post-info ul li {
+          margin: 0 5px 0 0;
+        }
+
+        article.audio .audio_cover {
+          margin:15px 0 15px 20px
+        }
+
+        article.audio .audio_info {
+          margin:0 0 15px 20px
+        }
+
+        article.audio .wthcover {
+          margin:0 0 0 20px
+        }
+
+        article.audio .audio_text {
+          margin:10px 0 0
+        }
+
+        .navigation ul{
+          margin:0 auto;
+          display:table;
+          height:45px;
+        }
+
+        .video-wrapper {
+          position: relative;
+          padding-bottom: 56%;
+          height: 0;
+          overflow:hidden
+        }
+        .video-wrapper iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%
+        }
+
+        #back-top a{
+          display:none !important;
+        }
+
+        header {
+          margin:15px 0 0
+        }
+
+        .pagination li a {
+          padding:0 20px
+        }
+      }
+  }
+      }
+
+      /* Custom CSS */
+      {CustomCSS}
+
+    </style>
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    </head>
+    <body>
+
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+    <div class="container clearfix">
+
+      <div class="grid3 first info {block:ifFixedSidebar}fixed{/block:ifFixedSidebar}">
+        <header>
+          {block:ifShowPortrait}<a href="/"><img src="{PortraitURL-128}" class="avatar" alt="{Title}" /></a>{/block:ifShowPortrait}
+          <h1><a href="/">{Title}</a></h1>
+          {block:Description}<p class="description">{Description}</p>{/block:Description}
+          <ul class="social-media">
+            {block:IfTwitterUsername}<li><a href="https://twitter.com/{text:Twitter Username}">twitter</a></li>{/block:IfTwitterUsername}
+            {block:IfFacebookUsername}<li><a href="https://facebook.com/{text:Facebook Username}">facebook</a></li>{/block:IfFacebookUsername}
+            {block:IfGitHubUsername}<li><a href="https://github.com/{text:GitHub Username}">github</a></li>{/block:IfGitHubUsername}
+          </ul>
+          <div class="clearfix"></div>
+          {block:ifShowMenu}
+          <ul class="nav-menu">
+            <li><a href="/archive">archive</a></li>
+            {block:AskEnabled}<li><a href="/ask">ask me</a></li>{/block:AskEnabled}
+            {block:SubmissionsEnabled}<li><a href="/submit">submit</a></li>{/block:SubmissionsEnabled}
+          </ul>
+          {/block:ifShowMenu}
+        </header>
+        {block:IfEnableNavigation}
+        <nav class="navigation">
+          <ul>
+            <li class="text"><a href="/tagged/text"></a></li>
+            <li class="quote"><a href="/tagged/quote"></a></li>
+            <li class="photo"><a href="/tagged/photo"></a></li>
+            <li class="link"><a href="/tagged/link"></a></li>
+            <li class="chat"><a href="/tagged/chat"></a></li>
+            <li class="video"><a href="/tagged/video"></a></li>
+            <li class="audio"><a href="/tagged/audio"></a></li>
+          </ul>
+        </nav>
+        {/block:IfEnableNavigation}
+        <p id="back-top">
+          <a href="#top"><span></span></a>
+        </p>
+      </div>
+
+      <section class="grid9 right">
+
+        {block:HasPages}
+        <div class="grid9 first nav-header">
+          <ul>
+            {block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}
+          </ul>
+        </div>
+        {/block:HasPages}
+
+        {block:TagPage}
+          <h3>Tag: {Tag}</h3>
+        {/block:TagPage}
+
+        <section id="posts">
+
+        {block:Posts}
+
+          {block:Text}
+          <article class="grid9 first box text">
+            <div class="padding">
+              {block:Title}
+                <h2><a href="{Permalink}">{Title}</a></h2>
+              {/block:Title}
+
+              {Body}
+              {block:HasTags}
+              <ul class="tags">
+                {block:Tags}<li><a href="{TagURL}">#{Tag}</a></li>{/block:Tags}
+              </ul>
+              {/block:HasTags}
+            </div>
+
+            {block:Date}
+            <div class="post-info">
+              <ul>
+                <li class="date"><a href="{Permalink}">{DayOfMonthWithZero}.{MonthNumberWithZero}.{ShortYear}</a></li>
+                {block:NoteCount}<li class="notes"><a href="{Permalink}#notes">{NoteCountWithLabel}</a></li>{/block:NoteCount}
+                {block:IfDisqusShortname}<li class="comments"><a class="dsq-comment-count" href="{Permalink}#disqus_thread"></a></li>{/block:IfDisqusShortname}
+                {block:IfShowSharingFeatures}
+                <li class="share">
+                  <a href="#">Share</a>
+                  <ul class="share_cont">
+                    {block:IfShareFacebook}<li><div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" data-font="arial"></div></li>{/block:IfShareFacebook}
+                    {block:IfShareTwitter}<li><a href="https://twitter.com/share" class="twitter-share-button" data-text="{block:Title}{PlaintextTitle}{/block:Title}" data-text="{block:Title}{PlaintextTitle}{/block:Title}" data-text="{block:Title}{PlaintextTitle}{/block:Title}" data-url="{Permalink}">Tweet</a></li>{/block:IfShareTwitter}
+                    {block:IfShareGooglePlus}<li><div class="g-plusone" data-size="medium" data-href="{Permalink}"></div></li>{/block:IfShareGooglePlus}
+                  </ul>
+                </li>
+                {/block:IfShowSharingFeatures}
+              </ul>
+            </div>
+            {/block:Date}
+
+          </article>
+          {/block:Text}
+
+          {block:Quote}
+          <article class="grid9 first box quote">
+            <div class="padding">
+              <p>{Quote}</p>
+              {block:Source}<p class="owner">— {Source}</p>{/block:Source}
+              {block:HasTags}
+              <ul class="tags">
+                {block:Tags}<li><a href="{TagURL}">#{Tag}</a></li>{/block:Tags}
+              </ul>
+              {/block:HasTags}
+            </div>
+            <div class="post-info">
+              <ul>
+                {block:Date}<li class="date"><a href="{Permalink}">{DayOfMonthWithZero}.{MonthNumberWithZero}.{ShortYear}</a></li>{/block:Date}
+                {block:NoteCount}<li class="notes"><a href="{Permalink}#notes">{NoteCountWithLabel}</a></li>{/block:NoteCount}
+                {block:IfDisqusShortname}<li class="comments"><a class="dsq-comment-count" href="{Permalink}#disqus_thread"></a></li>{/block:IfDisqusShortname}
+                {block:IfShowSharingFeatures}
+                <li class="share">
+                  <a href="#">Share</a>
+                  <ul class="share_cont">
+                    {block:IfShareFacebook}<li><div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" data-font="arial"></div></li>{/block:IfShareFacebook}
+                    {block:IfShareTwitter}<li><a href="https://twitter.com/share" class="twitter-share-button" data-text="{block:Title}{PlaintextTitle}{/block:Title}" data-text="{block:Title}{PlaintextTitle}{/block:Title}" data-text="{block:Title}{PlaintextTitle}{/block:Title}" data-url="{Permalink}">Tweet</a></li>{/block:IfShareTwitter}
+                    {block:IfShareGooglePlus}<li><div class="g-plusone" data-size="medium" data-href="{Permalink}"></div></li>{/block:IfShareGooglePlus}
+                  </ul>
+                </li>
+                {/block:IfShowSharingFeatures}
+              </ul>
+            </div>
+          </article>
+          {/block:Quote}
+
+          {block:Photo}
+          <article class="grid9 first box photo">
+            {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" /></a>{LinkCloseTag}
+            {block:Caption}
+            <div class="padding">
+              {Caption}
+              {block:HasTags}
+              <ul class="tags">
+                {block:Tags}<li><a href="{TagURL}">#{Tag}</a></li>{/block:Tags}
+              </ul>
+              {/block:HasTags}
+            </div>
+            {/block:Caption}
+            <div class="post-info">
+              <ul>
+                {block:Date}<li class="date"><a href="{Permalink}">{DayOfMonthWithZero}.{MonthNumberWithZero}.{ShortYear}</a></li>{/block:Date}
+                {block:NoteCount}<li class="notes"><a href="{Permalink}#notes">{NoteCountWithLabel}</a></li>{/block:NoteCount}
+                {block:IfDisqusShortname}<li class="comments"><a class="dsq-comment-count" href="{Permalink}#disqus_thread"></a></li>{/block:IfDisqusShortname}
+                {block:IfShowSharingFeatures}
+                <li class="share">
+                  <a href="#">Share</a>
+                  <ul class="share_cont">
+                    {block:IfShareFacebook}<li><div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" data-font="arial"></div></li>{/block:IfShareFacebook}
+                    {block:IfShareTwitter}<li><a href="https://twitter.com/share" class="twitter-share-button" data-text="{block:Title}{PlaintextTitle}{/block:Title}" data-text="{block:Title}{PlaintextTitle}{/block:Title}" data-text="{block:Title}{PlaintextTitle}{/block:Title}" data-url="{Permalink}">Tweet</a></li>{/block:IfShareTwitter}
+                    {block:IfShareGooglePlus}<li><div class="g-plusone" data-size="medium" data-href="{Permalink}"></div></li>{/block:IfShareGooglePlus}
+                  </ul>
+                </li>
+                {/block:IfShowSharingFeatures}
+              </ul>
+            </div>
+          </article>
+          {/block:Photo}
+
+          {block:Link}
+          <article class="grid9 first box link">
+            <div class="padding">
+              <h2><a href="{URL}" {Target}>{Name}</a></h2>
+              {block:Description}
+              {Description}
+              {/block:Description}
+              {block:HasTags}
+              <ul class="tags">
+                {block:Tags}<li><a href="{TagURL}">#{Tag}</a></li>{/block:Tags}
+              </ul>
+              {/block:HasTags}
+            </div>
+            <div class="post-info">
+              <ul>
+                {block:Date}<li class="date"><a href="{Permalink}">{DayOfMonthWithZero}.{MonthNumberWithZero}.{ShortYear}</a></li>{/block:Date}
+                {block:NoteCount}<li class="notes"><a href="{Permalink}#notes">{NoteCountWithLabel}</a></li>{/block:NoteCount}
+                {block:IfDisqusShortname}<li class="comments"><a class="dsq-comment-count" href="{Permalink}#disqus_thread"></a></li>{/block:IfDisqusShortname}
+                {block:IfShowSharingFeatures}
+                <li class="share">
+                  <a href="#">Share</a>
+                  <ul class="share_cont">
+                    {block:IfShareFacebook}<li><div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" data-font="arial"></div></li>{/block:IfShareFacebook}
+                    {block:IfShareTwitter}<li><a href="https://twitter.com/share" class="twitter-share-button" data-text="{Name}" data-text="{block:Title}{PlaintextTitle}{/block:Title}" data-text="{block:Title}{PlaintextTitle}{/block:Title}" data-url="{Permalink}">Tweet</a></li>{/block:IfShareTwitter}
+                    {block:IfShareGooglePlus}<li><div class="g-plusone" data-size="medium" data-href="{Permalink}"></div></li>{/block:IfShareGooglePlus}
+                  </ul>
+                </li>
+                {/block:IfShowSharingFeatures}
+              </ul>
+            </div>
+          </article>
+          {/block:Link}
+
+          {block:Chat}
+          <article class="grid9 first box chat">
+            <div class="padding">
+              {block:Title}
+                <h2><a href="{Permalink}">{Title}</a></h3>
+              {/block:Title}
+              <ul class="conv">
+                {block:Lines}
+                  <li class="{Alt} user_{UserNumber}">
+                    {block:Label}
+                      <span class="label">{Label}</span>
+                    {/block:Label}
+                    <p>{Line}</p>
+                  </li>
+                {/block:Lines}
+              </ul>
+              {block:HasTags}
+              <ul class="tags">
+                {block:Tags}<li><a href="{TagURL}">#{Tag}</a></li>{/block:Tags}
+              </ul>
+              {/block:HasTags}
+            </div>
+            <div class="post-info">
+              <ul>
+                {block:Date}<li class="date"><a href="{Permalink}">{DayOfMonthWithZero}.{MonthNumberWithZero}.{ShortYear}</a></li>{/block:Date}
+                {block:NoteCount}<li class="notes"><a href="{Permalink}#notes">{NoteCountWithLabel}</a></li>{/block:NoteCount}
+                {block:IfDisqusShortname}<li class="comments"><a class="dsq-comment-count" href="{Permalink}#disqus_thread"></a></li>{/block:IfDisqusShortname}
+                {block:IfShowSharingFeatures}
+                <li class="share">
+                  <a href="#">Share</a>
+                  <ul class="share_cont">
+                    {block:IfShareFacebook}<li><div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" data-font="arial"></div></li>{/block:IfShareFacebook}
+                    {block:IfShareTwitter}<li><a href="https://twitter.com/share" class="twitter-share-button" data-text="{block:Title}{PlaintextTitle}{/block:Title}" data-text="{block:Title}{PlaintextTitle}{/block:Title}" data-text="{block:Title}{PlaintextTitle}{/block:Title}" data-url="{Permalink}">Tweet</a></li>{/block:IfShareTwitter}
+                    {block:IfShareGooglePlus}<li><div class="g-plusone" data-size="medium" data-href="{Permalink}"></div></li>{/block:IfShareGooglePlus}
+                  </ul>
+                </li>
+                {/block:IfShowSharingFeatures}
+              </ul>
+            </div>
+          </article>
+          {/block:Chat}
+
+          {block:Video}
+          <article class="grid9 first box video">
+            <div class="video-wrapper">
+              {Video-700}
+            </div>
+            {block:Caption}
+            <div class="padding">
+              {Caption}
+              {block:HasTags}
+              <ul class="tags">
+                {block:Tags}<li><a href="{TagURL}">#{Tag}</a></li>{/block:Tags}
+              </ul>
+              {/block:HasTags}
+            </div>
+            {/block:Caption}
+            <div class="post-info">
+              <ul>
+                {block:Date}<li class="date"><a href="{Permalink}">{DayOfMonthWithZero}.{MonthNumberWithZero}.{ShortYear}</a></li>{/block:Date}
+                {block:NoteCount}<li class="notes"><a href="{Permalink}#notes">{NoteCountWithLabel}</a></li>{/block:NoteCount}
+                {block:IfDisqusShortname}<li class="comments"><a class="dsq-comment-count" href="{Permalink}#disqus_thread"></a></li>{/block:IfDisqusShortname}
+                {block:IfShowSharingFeatures}
+                <li class="share">
+                  <a href="#">Share</a>
+                  <ul class="share_cont">
+                    {block:IfShareFacebook}<li><div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" data-font="arial"></div></li>{/block:IfShareFacebook}
+                    {block:IfShareTwitter}<li><a href="https://twitter.com/share" class="twitter-share-button" data-text="{block:Title}{PlaintextTitle}{/block:Title}" data-text="{block:Title}{PlaintextTitle}{/block:Title}" data-text="{block:Title}{PlaintextTitle}{/block:Title}" data-url="{Permalink}">Tweet</a></li>{/block:IfShareTwitter}
+                    {block:IfShareGooglePlus}<li><div class="g-plusone" data-size="medium" data-href="{Permalink}"></div></li>{/block:IfShareGooglePlus}
+                  </ul>
+                </li>
+                {/block:IfShowSharingFeatures}
+              </ul>
+            </div>
+          </article>
+          {/block:Video}
+
+          {block:Audio}
+          <article class="grid9 first box audio">
+            {block:AlbumArt}
+            <div class="audio_cover">
+              <img src="{AlbumArtURL}" class="left">
+            </div>
+            {/block:AlbumArt}
+            <div class="audio_info {block:AlbumArt}wthcover{block:AlbumArt}">
+              {block:TrackName}<h2>{TrackName}</h2>{/block:TrackName}
+              <span>{block:Album}{Album}{/block:Album} {block:Artist}- {Artist}{/block:Artist}</span>
+              <div class="player">{AudioPlayerWhite}</div>
+            </div>
+            {block:Caption}
+            <div class="audio_text">
+              <div class="padding">
+                {Caption}
+                {block:HasTags}
+                <ul class="tags">
+                  {block:Tags}<li><a href="{TagURL}">#{Tag}</a></li>{/block:Tags}
+                </ul>
+                {/block:HasTags}
+              </div>
+            </div>
+            {/block:Caption}
+            <div class="post-info">
+              <ul>
+                {block:Date}<li class="date"><a href="{Permalink}">{DayOfMonthWithZero}.{MonthNumberWithZero}.{ShortYear}</a></li>{/block:Date}
+                {block:NoteCount}<li class="notes"><a href="{Permalink}#notes">{NoteCountWithLabel}</a></li>{/block:NoteCount}
+                {block:IfDisqusShortname}<li class="comments"><a class="dsq-comment-count" href="{Permalink}#disqus_thread"></a></li>{/block:IfDisqusShortname}
+                {block:IfShowSharingFeatures}
+                <li class="share">
+                  <a href="#">Share</a>
+                  <ul class="share_cont">
+                    {block:IfShareFacebook}<li><div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" data-font="arial"></div></li>{/block:IfShareFacebook}
+                    {block:IfShareTwitter}<li><a href="https://twitter.com/share" class="twitter-share-button" data-text="{block:TrackName}{TrackName}{/block:TrackName}" data-text="{block:Title}{PlaintextTitle}{/block:Title}" data-text="{block:Title}{PlaintextTitle}{/block:Title}" data-url="{Permalink}">Tweet</a></li>{/block:IfShareTwitter}
+                    {block:IfShareGooglePlus}<li><div class="g-plusone" data-size="medium" data-href="{Permalink}"></div></li>{/block:IfShareGooglePlus}
+                  </ul>
+                </li>
+                {/block:IfShowSharingFeatures}
+              </ul>
+            </div>
+          </article>
+          {/block:Audio}
+
+          {block:Answer}
+          <article class="grid9 first box answer">
+            <div class="padding">
+              <p class="question">{Asker}: {Question}</p>
+              <div class="reply">{Answer}</div>
+              {block:HasTags}
+              <ul class="tags">
+                {block:Tags}<li><a href="{TagURL}">#{Tag}</a></li>{/block:Tags}
+              </ul>
+              {/block:HasTags}
+            </div>
+            <div class="post-info">
+              <ul>
+                {block:Date}<li class="date"><a href="{Permalink}">{DayOfMonthWithZero}.{MonthNumberWithZero}.{ShortYear}</a></li>{/block:Date}
+                {block:NoteCount}<li class="notes"><a href="{Permalink}#notes">{NoteCountWithLabel}</a></li>{/block:NoteCount}
+                {block:IfDisqusShortname}<li class="comments"><a class="dsq-comment-count" href="{Permalink}#disqus_thread"></a></li>{/block:IfDisqusShortname}
+                {block:IfShowSharingFeatures}
+                <li class="share">
+                  <a href="#">Share</a>
+                  <ul class="share_cont">
+                    {block:IfShareFacebook}<li><div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" data-font="arial"></div></li>{/block:IfShareFacebook}
+                    {block:IfShareTwitter}<li><a href="https://twitter.com/share" class="twitter-share-button" data-text="{block:TrackName}{TrackName}{/block:TrackName}" data-text="{block:Title}{PlaintextTitle}{/block:Title}" data-text="{block:Title}{PlaintextTitle}{/block:Title}" data-url="{Permalink}">Tweet</a></li>{/block:IfShareTwitter}
+                    {block:IfShareGooglePlus}<li><div class="g-plusone" data-size="medium" data-href="{Permalink}"></div></li>{/block:IfShareGooglePlus}
+                  </ul>
+                </li>
+                {/block:IfShowSharingFeatures}
+              </ul>
+            </div>
+          </article>
+          {/block:Answer}
+
+        {/block:Posts}
+        </section>
+
+          {block:Posts}
+            {block:PostNotes}
+            <div class="grid9 first box notes" id="notes">
+              <div class="padding">
+                {PostNotes}
+              </div>
+            </div>
+            {/block:PostNotes}
+
+            {block:Date}
+              {block:IfDisqusShortname}
+                {block:PermalinkPage}
+                <div class="grid9 first box {PostType}">
+                  <div class="padding">
+                    <div id="disqus_thread"><a></a></div>
+                  </div>
+                </div>
+                {/block:PermalinkPage}
+              {/block:IfDisqusShortname}
+            {/block:Date}
+
+            {block:PermalinkPagination}
+            <ul class="pagination">
+              {block:PreviousPost}<li class="prev"><a href="{PreviousPost}">« prev</a></li>{/block:PreviousPost}
+              {block:NextPost}<li class="next"><a href="{NextPost}"> next »</a></li>{/block:NextPost}
+            </ul>
+            {/block:PermalinkPagination}
+          {/block:Posts}
+
+          {block:IndexPage}
+            {block:IfNotInfiniteScrolling}
+              {block:Pagination}
+              <ul class="pagination">
+                {block:PreviousPage}<li class="prev"><a href="{PreviousPage}">« prev</a></li>{/block:PreviousPage}
+                {block:NextPage}<li class="next"><a href="{NextPage}"> next »</a></li>{/block:NextPage}
+              </ul>
+              {/block:Pagination}
+            {block:IfNotInfiniteScrolling}
+          {/block:IndexPage}
+        </section>
+    </div>
+
+    <!--  Infinite Scrolling -->
+    {block:IfInfiniteScrolling}
+        <script type="text/javascript" src="https://raw.github.com/gist/4237664/6aef7b88d835b2fc02905bfb43b6987653de6f31/tumblr_autopager_custom.js"></script>
+        {/block:IfInfiniteScrolling}
+
+    <!--  Back-top -->
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("#back-top").hide();
+        $(function () {
+          $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+              $('#back-top').fadeIn();
+            } else {
+              $('#back-top').fadeOut();
+            }
+          });
+          $('#back-top a').click(function () {
+            $('body,html').animate({
+              scrollTop: 0
+            }, 800);
+            return false;
+          });
+        });
+                {block:TagPage}
+                $(".{Tag}").addClass("active");
+                {/block:TagPage}
+      });
+    </script>
+
+    <!--  Disqus -->
+    {block:IfDisqusShortname}
+      <script type="text/javascript">
+        var disqus_shortname = '{text:Disqus Shortname}';
+
+        setInterval(function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }, 2000);
+      </script>
+      {block:PermalinkPage}
+      <script type="text/javascript">
+        var disqus_shortname = '{text:Disqus Shortname}';
+        var disqus_url = '{Permalink}';
+        var disqus_title = '{block:PostTitle}{PostTitle}{/block:PostTitle}';
+
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      {/block:PermalinkPage}
+    {/block:IfDisqusShortname}
+
+    <!--  Share -->
+    {block:IfShowSharingFeatures}
+      <!--  Share Facebook -->
+      {block:IfShareFacebook}
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+      {/block:IfShareFacebook}
+      <!--  Share Twitter -->
+      {block:IfShareTwitter}
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      {/block:IfShareTwitter}
+      <!--  Share Google Plus -->
+      {block:IfShareGooglePlus}
+      <script type="text/javascript">
+        (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+        })();
+      </script>
+      {/block:IfShareGooglePlus}
+            <script type="text/javascript">
+                (function() {
+                    $("li.share a").live("click", function() {
+                        $(this).parent().find("ul.share_cont").slideToggle();
+
+                        return false;
+                    });
+                })();
+            </script>
+    {/block:IfShowSharingFeatures}
+
+    <!--  Google Analytics -->
+    {block:IfGoogleAnalyticsID}
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', '{text:Google Analytics ID}']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    {/block:IfGoogleAnalyticsID}
+{block:IfEnablePlaylist}
+<!-- SCM Music Player http://scmplayer.net -->
+<script type="text/javascript" src="http://scmplayer.net/script.js"
+data-config="{'skin':'http://static.tumblr.com/83zgfej/nA4m1mgt5/skin16.css','volume':100,'autoplay':true,'shuffle':true,'repeat':1,'placement':'bottom','showplaylist':false,'playlist':[{'title':'Time Of Our Lives','url':'http://www.youtube.com/watch?v=J9xW36DB9l8'},{'title':'A Drop In The Ocean','url':'http://www.youtube.com/watch?v=LVsrP9OJ6PA'},{'title':'I Wouldn%27t Mind','url':'http://www.youtube.com/watch?v=55QoKSd78Xs'},{'title':'Give It All','url':'http://www.youtube.com/watch?v=EzueDvbBxak'},{'title':'BlackBirds','url':'http://www.youtube.com/watch?v=q_Kk3AxQZfs'},{'title':'Echo','url':'http://www.youtube.com/watch?v=oPuzpT2iCZU'},{'title':'Down','url':'http://www.youtube.com/watch?v=M8He7KJwhqc'},{'title':'Keep Me Watching','url':'http://www.youtube.com/watch?v=7aMZ318yuto'},{'title':'You And Me','url':'http://www.youtube.com/watch?v=27nHtyAeiUU'},{'title':'Perfect For Me','url':'http://www.youtube.com/watch?v=4PCAHTQIRJk'},{'title':'Everything','url':'http://www.youtube.com/watch?v=fjDojEOiMcE'},{'title':'Common Denominator','url':'http://www.youtube.com/watch?v=SV_s0Q48R6c'},{'title':'Common Denominator - Live','url':'http://www.youtube.com/watch?v=5B32TlXCRHU'}]}" ></script>
+<!-- SCM Music Player script end -->
+{/block:IfEnablePlaylist}
+    </body>
+</html>
