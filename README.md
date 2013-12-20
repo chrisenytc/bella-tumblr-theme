@@ -5,7 +5,7 @@ A wonderful tumblr theme
 
 ### Installation
 
-Install with Tumblr Installer
+[Install with Tumblr Installer](http://www.tumblr.com/theme/38148)
 
 ### Screenshort
 
